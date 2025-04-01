@@ -1,21 +1,35 @@
-import { Image, StyleSheet, Platform, Text, FlatList, View } from 'react-native';
+import { Image, StyleSheet, Platform, Text, FlatList, View, Pressable } from 'react-native';
 import { Usuarios } from '@/constants/Usuarios';
+import { Link } from 'expo-router';
 
 
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Perfil de Clientes</Text>
+    <View style={{}}>
+      <Link href= "/Servicos" asChild>
+      <Pressable>
+        <Text>Serviços</Text>
+      </Pressable>
+      </Link>
+      
+      <Link href= "/Agendamenetos" asChild>
+            <Pressable>
+              <Text>Agendamentos</Text>
+      </Pressable>
+      </Link>
+      
+      <Text style={styles.titleContainer}>Perfil de Clientes</Text>
       
       <FlatList
       data={Usuarios()}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({item}) => (
-        <View style={styles.card}>
+        <View style={{}}>
           <Text>Id: {item.id}</Text>
           <Text>Nome: {item.nome}</Text>
-          <Text>Nome do Grupo: {item.nome}</Text>
+          <Text>Nome do Grupo: {item.nome_grupo}</Text>
+
 
 
         </View>
@@ -46,3 +60,5 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
+
+
