@@ -1,17 +1,50 @@
+import { Image, StyleSheet, Platform, Text, FlatList, View } from 'react-native';
+import { Servicos } from '@/constants/Servicos';
+import { Link } from 'expo-router';
 
 
-const servicos = [
+
+export default function HomeScreen() {
+  return (
+    <View style={{}}>
+       
+    
+    <Text style={{}}>Perfil de Clientes</Text>
+      
+      <FlatList
+      data={Servicos()}
+      keyExtractor={(item) => item.id_servicos.toString()}
+      renderItem={({item}) => (
+        <View style={{}}>
+          <Text>Id: {item.id_servicos} </Text>
+          <Text>Nome: {item.nome_servicos} </Text>
+          
+
+        </View>
+
+      )}
+      />
+
+    </View>
    
-           {id_servicos: 1, nome_servicos: "barbeiro"},
-           {id_servicos: 2, nome_servicos: "cabeleleiro"},
-           {id_servicos: 3, nome_servicos: "manicure"},
-           {id_servicos: 4, nome_servicos: "cavagem cabelo"},
-           {id_servicos: 5, nome_servicos: "cabeleleiro"},
-]
-        
-           
-           
-           
-           export const Servicos = function (){
-            return servicos;
-         }
+  );
+}
+
+const styles = StyleSheet.create({
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  stepContainer: {
+    gap: 8,
+    marginBottom: 8,
+  },
+  reactLogo: {
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+  },
+});
