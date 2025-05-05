@@ -1,19 +1,19 @@
-import { Image, StyleSheet, Platform, Text, FlatList, View, Pressable } from 'react-native';
 import { Usuarios } from '@/constants/Usuarios';
 import { Link } from 'expo-router';
+import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 
 
 
 export default function HomeScreen() {
   return (
     <View style={{}}>
-      <Link href= "/Servicos" asChild>
+      <Link href= "/servicos" asChild>
       <Pressable>
         <Text>Serviços</Text>
       </Pressable>
       </Link>
       
-      <Link href= "/Agendamenetos" asChild>
+      <Link href= "/agendamentos" asChild>
             <Pressable>
               <Text>Agendamentos</Text>
       </Pressable>
@@ -60,5 +60,4 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
-
 
