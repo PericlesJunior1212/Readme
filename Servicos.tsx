@@ -13,11 +13,11 @@ export default function HomeScreen() {
       
       <FlatList
       data={Servicos()}
-      keyExtractor={(item) => item.id_servicos.toString()}
+      keyExtractor={(item) => item.id_servico.toString()}
       renderItem={({item}) => (
         <View style={{}}>
-          <Text>Id: {item.id_servicos} </Text>
-          <Text>Nome: {item.nome_servicos} </Text>
+          <Text>Id: {item.id_servico} </Text>
+          <Text>Nome: {item.nome_servico} </Text>
           
 
         </View>
